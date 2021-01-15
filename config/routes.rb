@@ -5,8 +5,5 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-  get 'localhost:3000/main_screen' => 'schedule#index'
-  resources :schedules
-  root to: 'main_screens#index'
-  resources :main_screens
+  # root to: 'main_screens#index'
 end
