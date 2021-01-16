@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
+
+  resources :pub_users, only: [:create, :new, :show]
   # root to: 'main_screens#index'
+  get '/signup',to: 'admin/users#new'
 end
