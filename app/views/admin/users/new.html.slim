@@ -1,0 +1,13 @@
+h1 ユーザー登録
+
+.nav.justify-content-end
+-if @admin
+    =link_to '一覧',admin_users_path,class: 'nav-link'
+
+=render partial: 'form',locals:{user:@user,admin:@admin}
+
+/ -if admin
+    .form-check
+        =f.label :admin, class: 'form-check-label' do
+        =f.check_box :admin, class: 'form-check-input'
+        =f.label :admin
