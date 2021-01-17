@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'karimain/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #root to: 'calendars#index'
   resources :calendars
@@ -9,8 +10,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-
-  resources :pub_users, only: [:create, :new, :show]
-  # root to: 'main_screens#index'
+  root to: 'karimain#index'
   get '/signup',to: 'admin/users#new'
 end
