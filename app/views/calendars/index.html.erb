@@ -55,7 +55,7 @@
 
     <div class="container-calendar">
         <%= month_calendar do | date | %>
-            <%= link_to date.day, "http://localhost:3000/kari_hiduke/index" %>
+            <%= link_to date.day, day_index_path(:param1 => date, :param2 => date.wday) %>
         <% end %>
     </div>
 

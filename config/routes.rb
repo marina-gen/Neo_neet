@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'kari_hiduke/index'
+  get 'day/index'
   resources :calendars
   resources :schedules, only: [:create, :new, :index]
   get '/login', to: 'sessions#new'
