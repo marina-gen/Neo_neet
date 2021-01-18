@@ -1,0 +1,2 @@
+module KariHidukeHelper
+end
