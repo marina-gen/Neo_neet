@@ -57,3 +57,5 @@ gem 'slim-rails'
 gem 'html2slim'
 
 gem 'bootstrap'
+
+gem 'simple_calendar', '~> 2.0'
