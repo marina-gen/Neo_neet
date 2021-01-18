@@ -1,0 +1,16 @@
+<h1>スケジュール</h1>
+
+.nav.justify-content-end
+    = link_to '予定一覧', "http://localhost:3000/schedules", class: 'nav-link'
+    a.btn.btn-svg href='http://localhost:3000/calendars'
+        svg
+          rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
+        span  たびのはじまりへ
+
+= form_with model: @schedule, local: true do |f|
+    .form-group
+        = f.label :予定を追加
+        = f.text_field :name, class: 'form-control', id: 'schedule_name'
+
+
+    = f.submit nil, class: 'btn btn-primary'
