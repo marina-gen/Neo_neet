@@ -2,7 +2,7 @@ class SchedulesController < ApplicationController
     
     def new
         # @schedules = current_user.schedules.find(params[:id])
-        @schedules = Schedule.new
+        @schedule = Schedule.new
     end
     def index
         # @schedules = current_user.schedules
@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
     end
 
     def show
-        @scedule = schedule.find(params[:id])
+        @scedule = current_user.schedule.find(params[:id])
     end
 
     def edit 
@@ -25,10 +25,10 @@ class SchedulesController < ApplicationController
 
 
     def create
-        @schedule = current_user.schedule.new(schedule_params)
-    
+        @schedule = current_user.schedules.new(schedule_params)
+        
         if @schedule.save
-            redirect_to @schedule,notice: "予定「#[@schedule.name]」追加完了！"
+            redirect_to schedules_url, notice: "予定「#{@schedule.name} 」追加完了！"
         else
             render :new
         end        
@@ -46,6 +46,6 @@ class SchedulesController < ApplicationController
     private
 
     def schedule_params
-        params.require(:schedule).permit(:name, :startdate, :memo)
+        params.require(:schedule).permit(:name, :startdate, :enddate, :memo)
     end
 end
