@@ -98,11 +98,10 @@ input[type="submit"] {
 .kakomi-box2{//テキスト入力枠
   display: flex;
   position: relative;//移動するとき元の場所に戻る
-  margin: 2em auto;//箱の周りに出る空白
-  margin-top: 4em;//箱の外の上にでる空白
-  padding: 2.5em;//箱の中の空白
+  margin: 1em auto;//箱の周りに出る空白
+  padding: 10px;//箱の中の空白
   width: 50%;//箱の幅
-  height: 20em;//箱の高さ
+  height: 6em;//箱の高さ
   color: #555555;/* / 文字色 / */
   background-color:rgba(255,255,255,0.5);
   border: 4px double #0c0b0b; /* / 枠線の太さ・色 / */
