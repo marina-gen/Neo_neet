@@ -1,10 +1,12 @@
 class SchedulesController < ApplicationController
     
     def new
-        @schedule = Schedule.new
+        # @schedules = current_user.schedules.find(params[:id])
+        @schedules = Schedule.new
     end
     def index
-        @schedule = Schedule.all
+        # @schedules = current_user.schedules
+        @schedules = Schedule.where(user_id: current_user)
     end
 
     def show
@@ -12,18 +14,18 @@ class SchedulesController < ApplicationController
     end
 
     def edit 
-        @schedule = Schedule.find(params[:id])
+        @schedule = current_user.schedule.find(params[:id])
     end
 
     def update
-        schedule = Schedule.find(params[:id])
-        schedule.update!(task_params)
+        schedule = current_user.schedule.find(params[:id])
+        schedule.update!(schedule_params)
         redirect_to schedule_url,notice: "予定「#[@schedule.name]」変更完了！"
     end
 
 
     def create
-        @schedule = Schedule.new(schedule_params)
+        @schedule = current_user.schedule.new(schedule_params)
     
         if @schedule.save
             redirect_to @schedule,notice: "予定「#[@schedule.name]」追加完了！"
@@ -32,11 +34,11 @@ class SchedulesController < ApplicationController
         end        
         ##schedule.save!
         #redirect_to("")#リダイレクト先URL
-
+     
     end
 
     def destroy
-        schedule = Schedule.find(params[:id])
+        schedule = current_user.schedule.find(params[:id])
         schedule.destroy
         redirect_to schedule_url,notice: "予定「#[@schedule.name]」削除完了！"
     end
