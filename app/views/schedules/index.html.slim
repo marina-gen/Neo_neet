@@ -5,12 +5,17 @@ html
     meta charset="PixelMplus12-Bold" /
     title 予定一覧
     link href="schedule.css" rel="stylesheet" /
+    
   body
     header
       /# タイトル #/
       h1.bouken
         | 予定一覧
         span style=("font-size: 45px;")  -くえすと-
+        - @schedules.each do |schedule|
+          p
+            = schedule.name
+
     main
       a.btn.btn-svg href='http://localhost:3000/schedules/new'
         svg

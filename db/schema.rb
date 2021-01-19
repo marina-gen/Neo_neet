@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_121723) do
+ActiveRecord::Schema.define(version: 2021_01_18_201509) do
 
   create_table "schedules", force: :cascade do |t|
     t.string "name", null: false
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_01_15_121723) do
     t.text "memo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
-  
-ActiveRecord::Schema.define(version: 2021_01_15_013026) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
