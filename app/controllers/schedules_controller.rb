@@ -3,6 +3,7 @@ class SchedulesController < ApplicationController
     def new
         # @schedules = current_user.schedules.find(params[:id])
         @schedule = Schedule.new
+ 
     end
     def index
         # @schedules = current_user.schedules
