@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        meta[charset="PixelMplus12-Bold"]
+        title
+            | 冒険の書
+        link[rel="stylesheet" href="main_diaries.scss"]
+    body
+        header
+            h1.bouken
+                | 冒険の書
+                span[style="font-size: 45px;"]
+                    | -ぼうけんのしょ-
+            a.btn.btn-svg[href="main_diaries/new"]
+                svg
+                    rect[x="1.5" y="1.5" rx="0" fill="none" width="150" height="50"]
+                span.kinou
+                    | セーブ
+            a.btn.btn-svg[href=".."]
+                svg
+                    rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+                span
+                    | 戻る
+        main
+            div
+                - @diaries.each do |diary|
+                    ul.bun
+                        = link_to main_diary_path(diary)
+                            p
+                                = diary.today.strftime("%Y年%m月%d日")
+                            p
+                                = diary.diary

@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        meta[charset="PixelMplus12-Bold"]
+        title
+            | 日記本文
+        link[rel="stylesheet" href="nikki_honbun.scss"]
+    body
+        header
+            = @diary.today.strftime("%Y年%m月%d日")
+        main
+            .nikki
+                = @diary.diary
+            
+            = link_to @diary, method: :delete, data: {confirm: "#{@diary.today}の日記を削除します。よろしいですか？"}, class:'btn btn-svg'
+                svg
+                    rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+                span
+                    | 消去
+            a.btn.btn-svg[href="../main_diaries"]
+                svg
+                    rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+                span
+                    | 戻る

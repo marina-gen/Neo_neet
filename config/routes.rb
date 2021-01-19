@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   root to: 'calendars#index'
   get '/signup',to: 'admin/users#new'
+
+  resources :main_diaries, :except => [:edit, :update]
 end

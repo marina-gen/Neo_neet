@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta[charset="utf-8"]
+        title
+            | 日記書き込み
+        link[rel="stylesheet" href="kakikomi.scss"]
+    body[background="haikei.png"]
+        header
+            = @day.strftime("%Y年%m月%d日")
+        main
+            = form_with model: @diary, local: true do |f|
+                = f.hidden_field :today, :value => @day
+                = f.text_area :diary, class: "kakomi-box1", maxlength: "200", placeholder: "今日、どんなことしたん？"
+                p
+                    a.btn.btn-svg
+                        //ボタン枠
+                        svg
+                            rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+                        span
+                            = f.submit "セーブ", class: "btn btn-svg"
+        
+                    a.btn.btn-svg[href="../main_diaries"]
+                        svg
+                            rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+                        span
+                            | 戻る
