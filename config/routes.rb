@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :pub_users, only: [:create, :new, :show]
   # root to: 'main_screens#index'
   get '/signup',to: 'admin/users#new'
+
+  resources :main_diaries, :except => [:edit, :update]
 end
