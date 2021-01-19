@@ -10,6 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+ActiveRecord::Schema.define(version: 2021_01_18_201509) do
+
+  create_table "schedules", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "startdate", null: false
+    t.datetime "enddate", null: false
+    t.text "memo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
+
 ActiveRecord::Schema.define(version: 2021_01_17_174326) do
 
   create_table "main_diaries", force: :cascade do |t|
@@ -17,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_01_17_174326) do
     t.text "diary", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
   end
 
   create_table "users", force: :cascade do |t|
