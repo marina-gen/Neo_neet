@@ -14,13 +14,22 @@ html
     main
       .caption_box[data-caption="予定"]
         br
-        | 今日の予定はありません
+          = @noschedule
+          - @tschedules.each do | tschedule |
+            = tschedule.name
+            br
       .caption_box[data-caption="時刻"]
         br
-        | 予定時刻
+          = @noschedule
+          - @tschedules.each do | tschedule |
+            = tschedule.startdate.strftime("%Y年%m月%d日")
+            br
       .caption_box[data-caption="日記"]
-        br
-        | 日記まだ書いてないです
+        br 
+          = @nosavedata
+          - @tmain_diaries.each do | tmain_diaries |
+            = tmain_diaries.diary
+            br
     footer
       .seave
         a.btn.btn-svg[href="http://localhost:3000/schedules/new"]
