@@ -7,16 +7,30 @@ html
         link[rel="stylesheet" href="nikki_honbun.scss"]
     body
         header
-            = @scedules.today.strftime("%Y年%m月%d日")
+ 
+            = @schedule.startdate.strftime("%Y年%m月%d日")
         main
             .nikki
-                = @scedules.diary
+
+                p
+                    = @schedule.name
+                p
+                    = @schedule.startdate.strftime("%H時%M分")
+                p
+                    = @schedule.enddate.strftime("%H時%M分")
+                p    
+                    = @schedule.memo
             
-            = link_to @scedules, method: :delete, data: {confirm: "#{@scedules.today}の予定を削除します。よろしいですか？"}, class:'btn btn-svg'
+            = link_to @schedule, method: :delete, data: {confirm: "#{@schedule.startdate.strftime("%Y年%m月%d日")}の日記を削除します。よろしいですか？"}, class:'btn btn-svg'
                 svg
                     rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
                 span
                     | 消去
+            = link_to @schedule, method: :edit, class:'btn btn-svg'
+                svg
+                    rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+                span
+                    | 編集
             a.btn.btn-svg[href="../schedules"]
                 svg
                     rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]

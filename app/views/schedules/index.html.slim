@@ -39,10 +39,18 @@ html
       div
         /#予定が書き込まれたら内容を表示 #/       
       
-          - @diaries.each do |diary|
-              ul.bun
-                  = link_to main_diary_path(diary)
-                      p
-                          = diary.today.strftime("%Y年%m月%d日")
-                      p
-                          = diary.diary    
+        - @schedules.each do |schedule|
+            ul.bun
+                = link_to schedule_path(schedule.id)
+                    p
+                        = schedule.startdate.strftime("%Y年%m月%d日")
+                    p
+                        = schedule.name
+                    p
+                        = schedule.startdate.strftime("%H時%M分")
+                    p
+                        = schedule.enddate.strftime("%H時%M分")
+                    p    
+                        = schedule.memo
+                    p    
+                        = schedule.id

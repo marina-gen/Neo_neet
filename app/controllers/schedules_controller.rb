@@ -11,7 +11,7 @@ class SchedulesController < ApplicationController
     end
 
     def show
-        @schedules = current_user.schedules.find(params[:id])
+        @schedule = current_user.schedules.find(params[:id])
     end
 
     def edit 
@@ -40,8 +40,8 @@ class SchedulesController < ApplicationController
 
     def destroy
         schedule = current_user.schedules.find(params[:id])
-        schedule.destroy
-        redirect_to schedule_url,notice: "予定「#[@schedule.name]」削除完了！"
+        schedule.delete
+        redirect_to schedules_url,notice: "予定「#[@schedule.name]」削除完了！"
     end
 
     private
