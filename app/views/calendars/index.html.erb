@@ -11,16 +11,18 @@
 </head>
 
 <body>
-    <%# <div>
-        <h1 class="title">カレンダーRPG</h1>
-    </div> %>
+    <div>
+        <h1 class="title">−ＲＰＣ−</h1>
+    </div> 
     
-    <div class="kakomi-box1 yotei">
+    <div class="kakomi-box1">
         <span class=title-box>本日の予定</span>
-        <%= @noschedule %>
-        <% @todayschedules.each do |schedule| %>
-            <%= schedule.name%>
-        <% end %>
+        <div class="yotei top">
+            <%= @noschedule %>
+            <% @todayschedules.each do |schedule| %>
+                <%= schedule.name%>
+            <% end %>
+        </div>
         <ul class="menu">
         </ul>
     </div>
