@@ -7,7 +7,8 @@ class SchedulesController < ApplicationController
     end
     def index
         # @schedules = current_user.schedules
-        @schedules = Schedule.where(user_id: current_user)
+        @sday = Date.today  
+        @schedules = Schedule.where(user_id: current_user, startdate: @sday..Float::INFINITY).order(startdate: "ASC")
     end
 
     def show

@@ -26,7 +26,7 @@ html
       /#予定追加画面 下のやつリストの箱作っとる #/
       div
         /#予定が書き込まれたら内容を表示 #/       
-      
+        /#if @schedules.where('date >= ?', Date.today)#/
         - @schedules.each do |schedule|
             ul.bun
                 = link_to schedule_path(schedule.id)
