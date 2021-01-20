@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    meta charset="PixelMplus12-Bold" /
+    title 予定一覧
+    link href="schedule.css" rel="stylesheet" /
+    
+  body
+    header
+      /# タイトル #/
+      h1.bouken
+        | 予定一覧
+        span style=("font-size: 45px;")  -くえすと-
+  
+
+    main
+      a.btn.btn-svg href='http://localhost:3000/schedules/new'
+        svg
+          rect fill="none" height="50" rx="0" width="150" x="1.5" y="1.5" 
+        span.kinou 予定追加
+      a.btn.btn-svg href='http://localhost:3000/calendars'
+        svg
+          rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
+        span  たびのはじまりへ
+
+      /#予定追加画面 下のやつリストの箱作っとる #/
+      div
+        /#予定が書き込まれたら内容を表示 #/       
+        /#if @schedules.where('date >= ?', Date.today)#/
+        - @schedules.each do |schedule|
+            ul.bun
+                = link_to schedule_path(schedule.id)
+                    p
+                        = schedule.startdate.strftime("%Y年%m月%d日")
+                    p
+                        = schedule.name
+                    p
+                        = schedule.startdate.strftime("%H時%M分")
+                    p
+                        = schedule.enddate.strftime("%H時%M分")
+                    p    
+                        = schedule.memo
+                    p    
+                        = schedule.id

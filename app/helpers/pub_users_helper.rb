@@ -1,2 +1,0 @@
-module PubUsersHelper
-end

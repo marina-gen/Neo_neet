@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    title
+      | 今日
+    = stylesheet_link_tag "hi", :media => "all"
+  body[background="haikei.png"]
+    header
+      = @sday.strftime("%Y年%m月%d日")
+
+      script[type="text/javascript"]
+        |  document.getElementById("view_today").innerHTML = getToday(); function getToday() { var now = new Date(); var year = now.getFullYear(); var mon = now.getMonth()+1; //１を足すこと var day = now.getDate(); var you = now.getDay(); //曜日(0～6=日～土) //曜日の選択肢 var youbi = new Array("日","月","火","水","木","金","土"); //出力用 var s = year + "年" + mon + "月" + day + "日 (" + youbi[you] + ")".small(); return s; } 
+    main
+      .caption_box[data-caption="予定"]
+        br
+          = @noschedule
+          - @tschedules.each do | tschedule |
+            = tschedule.name
+            br
+      .caption_box[data-caption="時刻"]
+        br
+          = @noschedule
+          - @tschedules.each do | tschedule |
+            = tschedule.startdate.strftime("%Y年%m月%d日")
+            br
+      .caption_box[data-caption="日記"]
+        br 
+          = @nosavedata
+          - @tmain_diaries.each do | tmain_diaries |
+            = tmain_diaries.diary
+            br
+    footer
+      .seave
+        a.btn.btn-svg[href="http://localhost:3000/schedules/new"]
+          svg
+            rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+          span
+            | 予定を追加
+        a.btn.btn-svg[href="http://localhost:3000/main_diaries/new"]
+          svg
+            rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+          span
+            | 冒険の書
+            a.btn.btn-svg[href="http://localhost:3000/calendars"]
+          svg
+            rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+          span
+            | 戻る
