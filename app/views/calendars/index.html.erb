@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <div>
+    <%# <div>
         <h1 class="title">カレンダーRPG</h1>
-    </div>
+    </div> %>
     
     <div class="kakomi-box1 yotei">
         <span class=title-box>本日の予定</span>
@@ -25,19 +25,19 @@
         </ul>
     </div>
 
-    <div class="container-calendar">
-        <h4 id="monthAndYear"></h4>
-        <div class="button-container-calendar">
+    <%# <div class="container-calendar"> %>
+        <%# <h4 id="monthAndYear"></h4> %>
+        <%# <div class="button-container-calendar">
             <button id="previous" onclick="previous()">‹</button>
             <button id="next" onclick="next()">›</button>
-        </div>
+        </div> %>
         
-        <table class="table-calendar" id="calendar" data-lang="ja">
+        <%# <table class="table-calendar" id="calendar" data-lang="ja">
             <thead id="thead-month"></thead>
             <tbody id="calendar-body"></tbody>
-        </table>
+        </table> %>
         
-        <div class="footer-container-calendar">
+        <%# <div class="footer-container-calendar">
             <label for="month">日付指定：</label>
             <select id="month" onchange="jump()">
                 <option value=0>1月</option>
@@ -54,8 +54,8 @@
                 <option value=11>12月</option>
             </select>
             <select id="year" onchange="jump()"></select>
-        </div>
-  </div>
+        </div> %>
+  <%# </div> %>
 
     <div class="container-calendar">
         <%= month_calendar do | date | %>
@@ -74,8 +74,10 @@
             <p>設定</p>
             <p>日記</p>
         -->
-        <p><%= link_to 'くえすと追加', schedules_path %></p>
-        <p><%= link_to '日記', main_diaries_path %></p>
+
+        <p class = "top"><%= link_to '・くえすと追加', schedules_path %></p>
+        <p><%= link_to '・日記', schedules_path %></p>
+
         </ul>
     </div>
 
