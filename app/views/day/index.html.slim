@@ -14,22 +14,25 @@ html
     main
       .caption_box[data-caption="予定"]
         br
-          = @noschedule
-          - @tschedules.each do | tschedule |
-            = tschedule.name
-            br
+          div[class="naka"]
+            = @noschedule
+            - @tschedules.each do | tschedule |
+              = tschedule.name
+            
       .caption_box[data-caption="時刻"]
         br
-          = @noschedule
-          - @tschedules.each do | tschedule |
-            = tschedule.startdate.strftime("%Y年%m月%d日")
-            br
+          div[class="naka"]
+            = @noschedule
+            - @tschedules.each do | tschedule |
+              = tschedule.startdate.strftime("%Y年%m月%d日")
+            
       .caption_box[data-caption="日記"]
-        br 
-          = @nosavedata
-          - @tmain_diaries.each do | tmain_diaries |
-            = tmain_diaries.diary
-            br
+        br
+          div[class="naka"]
+            = @nosavedata
+            - @tmain_diaries.each do | tmain_diaries |
+              = tmain_diaries.diary
+            
     footer
       .seave
         a.btn.btn-svg[href="http://localhost:3000/schedules/new"]
@@ -42,9 +45,11 @@ html
             rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
           span
             | 冒険の書
-            a.btn.btn-svg[href="http://localhost:3000/calendars"]
+        a.btn.btn-svg[href="http://localhost:3000/calendars"]
           svg
             rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
           span
             | 戻る
-            a.btn.btn-svg[href="http://localhost:3000/calendars"]
+
+           /! a.btn.btn-svg[href="http://localhost:3000/calendars"]
+
