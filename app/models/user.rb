@@ -5,4 +5,5 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
 
     has_many :schedules
+    has_many :main_diaries
 end
