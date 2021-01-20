@@ -1,6 +1,6 @@
 class MainDiariesController < ApplicationController
     def index
-        @diaries = MainDiary.all.order(today: :desc)
+        @diaries = MainDiary.where(user_id: current_user).order(today: :desc)
     end
 
     def new
@@ -9,7 +9,7 @@ class MainDiariesController < ApplicationController
     end
 
     def create
-        @diary = MainDiary.new(diary_params)
+        @diary = current_user.main_diaries.new(diary_params)
         @day = Date.today
         if @diary.save
             redirect_to main_diaries_url, notice:"日記を保存しました。"
@@ -19,11 +19,11 @@ class MainDiariesController < ApplicationController
     end
 
     def show
-        @diary = MainDiary.find(params[:id])
+        @diary = current_user.main_diaries.find(params[:id])
     end
 
     def destroy
-        diary = MainDiary.find(params[:id])
+        diary = current_user.main_diaries.find(params[:id])
         diary.delete
         redirect_to main_diaries_url, notice:"#{diary.today}の日記を削除しました。"
     end
@@ -32,6 +32,6 @@ class MainDiariesController < ApplicationController
     private
 
     def diary_params
-        params.require(:main_diary).permit(:today, :diary)
+        params.require(:main_diary).permit(:today, :diary, :user_id)
     end
 end

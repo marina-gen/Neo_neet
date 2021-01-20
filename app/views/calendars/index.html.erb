@@ -17,6 +17,7 @@
     
     <div class="kakomi-box1 yotei">
         <span class=title-box>本日の予定</span>
+        <%= @noschedule %>
         <% @todayschedules.each do |schedule| %>
             <%= schedule.name%>
         <% end %>
@@ -73,8 +74,10 @@
             <p>設定</p>
             <p>日記</p>
         -->
+
         <p class = "top"><%= link_to '・くえすと追加', schedules_path %></p>
         <p><%= link_to '・日記', schedules_path %></p>
+
         </ul>
     </div>
 

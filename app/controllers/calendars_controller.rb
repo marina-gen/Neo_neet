@@ -11,8 +11,8 @@ class CalendarsController < ApplicationController
         # @slists = Schedule.where("startdate < ? AND enddate >= ?", params[:nd], params[:d]).order(startdate: :asc)
         # @todayschedules = Schedule.where(user_id: current_user, startdate: @d)
         @todayschedules = Schedule.where(user_id: current_user, startdate: @d) #DBから今日のスケジュールを取得
-        if @todayschedules == nil
-            @todayschedules = "今日のクエストはありません"
+        if @todayschedules.first == nil
+            @noschedule = "今日のクエストはありません"
         end
 
       end
