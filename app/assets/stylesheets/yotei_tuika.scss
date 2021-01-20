@@ -1,0 +1,177 @@
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+h2{
+    margin-bottom: 10px;
+    font-size: 70px;
+}
+body {
+    padding: 30px;
+    background-image: url('haikei.png');
+    background-size: cover;
+    font-family: "PixelMplus12-Regular";
+}
+
+
+/* 予定メモ枠 */
+
+.form-control {
+    width: 450px;
+    height: 50px;
+    font-size: 35px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 25px;
+}
+
+select {
+    border: 1px solid #eee;
+    font-size: 16px;
+    width: 80px;
+    height: 45px;
+    margin-left: 10px;
+}
+
+.komoji {
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+form-group1{
+    font-size: 30px;
+}
+.form-control2 {
+    width: 550px;
+    height: 65px;
+    font-size: 45px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 25px;
+}
+
+
+/* 見出し */
+
+.midasi {
+    font-size: 35px;
+    text-align: center;
+}
+
+.t,
+.itukara,
+.m {
+    font-size: 30px;
+}
+
+.itukara {
+    letter-spacing: 6px;
+    margin-left: 70px;
+    padding-top: 10px;
+    padding-right: 21px;
+}
+
+
+.m {
+    
+        padding: 0px 6px 0px 27px;
+    letter-spacing: 30px;
+}
+
+
+/* フォント */
+
+@font-face {
+    font-family: 'PixelMplus12';
+    src: URL('C:\Windows\Fonts\PixelMplus12.TFF') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* タイトル、時間、備考 */
+
+.footerInner {
+    display: block;
+    text-align: right;
+}
+
+
+/* セーブ、キャンセル */
+
+.main {
+    font-size: 45px;
+    // text-align: center;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+
+/* 選択機能 */
+
+.btn,
+a.btn,
+button.btn {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+}
+
+a.btn-svg {
+    font-weight: 700;
+    line-height: 54px;
+    width: 160px;
+    height: 54px;
+    padding: 0;
+    margin: 1em;
+    margin-top: 5em;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+a.btn-svg svg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a.btn-svg svg rect {
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+    stroke: #000;
+    stroke-width: 4px;
+    stroke-dasharray: 200px, 16px;
+    stroke-dashoffset: 70px;
+}
+
+a.btn-svg:hover svg rect {
+    stroke-dashoffset: 284px;
+}
+
+a.btn-svg span {
+    color: #000;
+}
