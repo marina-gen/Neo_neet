@@ -1,0 +1,229 @@
+@font-face {
+    font-family: "PixelMplus12-Regular";
+    src: font-url('/assets/PixelMplus12-Regular.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.waku {
+    /* ログインボーナス枠 */
+    border-radius: 5px;
+    padding: 45px 10px 10px 10px;
+    /* 内側の余白 上・右・左・下 */
+    width: 21em;
+    /* 枠の横幅 */
+    height: 20em;
+    /* 枠の高さ */
+    margin: 1.5em;
+    /* 枠の背景色 */
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 0;
+    margin-right: 3em;
+    float: right;
+}
+
+.waku:before {
+    /* 枠の上部 */
+    background-color: #bcf7ff;
+    /* タイトル部分背景色 */
+    border-radius: 5px 5px 0px 0px;
+    color: rgb(78, 78, 78);
+    /* タイトル部分文字色 */
+    content: 'ラーメン';
+    font-weight: bold;
+    font-size: 30px;
+    /* 枠タイトル変更 */
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.waku:after {
+    /* 枠の吹き出し▽部分 */
+    border-style: solid;
+    border-width: 40px 40px 0 40px;
+    border-color: #bcf7ff transparent transparent transparent;
+    /* 吹き出し三角部分の色 */
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    width: 0px;
+    height: 0px;
+    z-index: 1;
+    /* ログインボーナス枠 ↑ */
+}
+
+.midasi {
+    /* midasiヘッダー*/
+    position: relative;
+    padding: 1rem 2rem calc(1rem + 10px);
+    /* ヘッダー背景色 */
+    background: #bcf7ff;
+    width: 55%;
+}
+
+.midasi:before {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    content: '';
+    /* ボーダーの色 */
+    border-bottom: 4px solid rgb(92, 92, 92);
+}
+
+.kakomi {
+    position: relative;
+    width: 54.8%
+}
+
+.meigen {
+    margin-left: 30px;
+}
+
+.kakomi:before {
+    position: absolute;
+    left: -7px;
+    width: 60em;
+    height: 23.3em;
+    content: '';
+    border: 4px solid rgb(92, 92, 92);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+    color: rgb(78, 78, 78);
+    font-size: 50px;
+    margin: 0%;
+}
+
+.h2 {
+    color: rgb(78, 78, 78);
+    font-size: 28px;
+}
+
+.bonus {
+    position: relative;
+}
+
+.sita {
+    text-align: center;
+}
+
+body {
+    background-image: url("heya.jpg");
+    background-size: cover;
+}
+
+main {
+    padding-bottom: 9.5em;
+}
+
+image.mono {
+    margin: 5px;
+}
+
+.hito {
+    margin: 2em;
+    position: relative;
+}
+
+.word {
+    position: relative;
+    position: absolute;
+    margin-top: 2em;
+    display: inline-block;
+    font-size: 30px;
+    color: rgb(92, 92, 92);
+}
+
+.word2 {
+    position: relative;
+    position: absolute;
+    margin-top: 20px;
+    font-size: 25px;
+    line-height: 1.7em;
+    margin-left: 1em;
+    color: rgb(92, 92, 92);
+}
+
+
+/* 受け取るボタン ↓*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.btn,
+a.btn,
+button.btn {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: rgb(92, 92, 92);
+    border-radius: 0.5rem;
+}
+
+a.btn-svg {
+    /* ボタン枠の大きさなど */
+    font-weight: 700;
+    line-height: 54px;
+    width: 160px;
+    height: 54px;
+    padding: 0;
+    margin: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+a.btn-svg svg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a.btn-svg svg rect {
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+    /* ボタン枠の色 */
+    stroke: rgb(92, 92, 92);
+    stroke-width: 4;
+    stroke-dasharray: 200px, 16px;
+    stroke-dashoffset: 70px;
+}
+
+a.btn-svg:hover svg rect {
+    stroke-dashoffset: 284px;
+}
+
+a.btn-svg span {
+    /* ボタンに表示されるテキストの色 */
+    color: rgb(73, 73, 73);
+    /* ↑ボタン */
+}

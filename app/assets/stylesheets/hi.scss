@@ -37,6 +37,8 @@ header {
 
 div.caption_box {
   display: inline-block;
+  width: 40em;
+  height: 13em;
 }
 
 /* ↑横並び */
@@ -46,6 +48,10 @@ div.caption_box {
 }
 
 .data-caption, br {
+  font-size: 15px;
+}
+
+.naka{
   font-size: 15px;
 }
 
@@ -132,7 +138,7 @@ a.btn-svg {
   height: 54px;
   padding: 0;
   margin: 1em;
-  margin-top: 5em;
+  margin-top: 2em;
   cursor: pointer;
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.5);
