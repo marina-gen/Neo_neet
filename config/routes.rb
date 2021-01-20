@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'day/index'
   resources :calendars
-  resources :schedules, only: [:create, :new, :index]
+  resources :schedules, only: [:create, :new, :index, :show]
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/lodout', to: 'sessions#destroy'

@@ -14,7 +14,7 @@ html
         span style=("font-size: 45px;")  -くえすと-
         - @schedules.each do |schedule|
           p
-            = schedule.name
+  
 
     main
       a.btn.btn-svg href='http://localhost:3000/schedules/new'
@@ -30,23 +30,19 @@ html
         svg
           rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
         span  たびのはじまりへ
+      a.btn.btn-svg href='http://localhost:3000/schedules/show'
+        svg
+          rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
+        span  詳細
 
       /#予定追加画面 下のやつリストの箱作っとる #/
       div
-        /#予定が書き込まれたら内容を表示 #/
-        ul.kakomi-box1 
-        ul.kakomi-box1 　
-/#        ul.kakomi-box1 　
-  　   a.btn.btn-svg href="schedules#creat" 
-        svg
-          rect fill="none" height="50" rx="0" width="150" x="1.5" y="1.5" 
-        span.kinou 予定追加
-      a.btn.btn-svg href="schedules" 
-        svg
-          rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
-        span 消去
-      a.btn.btn-svg href="calendars" 
-        svg
-          rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
-        span  たびのはじまりへ
-#/
+        /#予定が書き込まれたら内容を表示 #/       
+      
+          - @diaries.each do |diary|
+              ul.bun
+                  = link_to main_diary_path(diary)
+                      p
+                          = diary.today.strftime("%Y年%m月%d日")
+                      p
+                          = diary.diary    

@@ -11,15 +11,15 @@ class SchedulesController < ApplicationController
     end
 
     def show
-        @scedule = current_user.schedule.find(params[:id])
+        @schedules = current_user.schedules.find(params[:id])
     end
 
     def edit 
-        @schedule = current_user.schedule.find(params[:id])
+        @schedules = current_user.schedules.find(params[:id])
     end
 
     def update
-        schedule = current_user.schedule.find(params[:id])
+        schedule = current_user.schedules.find(params[:id])
         schedule.update!(schedule_params)
         redirect_to schedule_url,notice: "予定「#[@schedule.name]」変更完了！"
     end
@@ -39,7 +39,7 @@ class SchedulesController < ApplicationController
     end
 
     def destroy
-        schedule = current_user.schedule.find(params[:id])
+        schedule = current_user.schedules.find(params[:id])
         schedule.destroy
         redirect_to schedule_url,notice: "予定「#[@schedule.name]」削除完了！"
     end
