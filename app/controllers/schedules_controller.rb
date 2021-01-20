@@ -2,7 +2,8 @@ class SchedulesController < ApplicationController
     
     def new
         # @schedules = current_user.schedules.find(params[:id])
-        @schedules = Schedule.new
+        @schedule = Schedule.new
+ 
     end
     def index
         # @schedules = current_user.schedules
@@ -10,25 +11,25 @@ class SchedulesController < ApplicationController
     end
 
     def show
-        @scedule = schedule.find(params[:id])
+        @schedule = current_user.schedules.find(params[:id])
     end
 
     def edit 
-        @schedule = current_user.schedule.find(params[:id])
+        @schedules = current_user.schedules.find(params[:id])
     end
 
     def update
-        schedule = current_user.schedule.find(params[:id])
+        schedule = current_user.schedules.find(params[:id])
         schedule.update!(schedule_params)
         redirect_to schedule_url,notice: "予定「#[@schedule.name]」変更完了！"
     end
 
 
     def create
-        @schedule = current_user.schedule.new(schedule_params)
-    
+        @schedule = current_user.schedules.new(schedule_params)
+        
         if @schedule.save
-            redirect_to @schedule,notice: "予定「#[@schedule.name]」追加完了！"
+            redirect_to schedules_url, notice: "予定「#{@schedule.name} 」追加完了！"
         else
             render :new
         end        
@@ -38,14 +39,14 @@ class SchedulesController < ApplicationController
     end
 
     def destroy
-        schedule = current_user.schedule.find(params[:id])
-        schedule.destroy
-        redirect_to schedule_url,notice: "予定「#[@schedule.name]」削除完了！"
+        schedule = current_user.schedules.find(params[:id])
+        schedule.delete
+        redirect_to schedules_url,notice: "予定「#[@schedule.name]」削除完了！"
     end
 
     private
 
     def schedule_params
-        params.require(:schedule).permit(:name, :startdate, :memo)
+        params.require(:schedule).permit(:name, :startdate, :enddate, :memo)
     end
 end

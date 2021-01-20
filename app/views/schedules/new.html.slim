@@ -1,7 +1,10 @@
 <h1>スケジュール</h1>
 
 .nav.justify-content-end
-    = link_to '予定一覧', "http://localhost:3000/schedules", class: 'nav-link'
+    a.btn.btn-svg href='http://localhost:3000/schedules'
+        svg
+          rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
+        span  予定一覧
     a.btn.btn-svg href='http://localhost:3000/calendars'
         svg
           rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
@@ -11,6 +14,16 @@
     .form-group
         = f.label :予定を追加
         = f.text_field :name, class: 'form-control', id: 'schedule_name'
+    .form-group
+        = f.label :いつから
+        = f.text_field :startdate, class: 'form-control'
+    .form-group
+        = f.label :いつまで
+        = f.text_field :enddate, class: 'form-control'
+ 
+    .form-group
+        = f.label :メモ
+        = f.text_field :memo, class: 'form-control'
+ 
 
-
-    = f.submit nil, class: 'btn btn-primary'
+    = f.submit '投稿', class: 'btn btn-primary'
