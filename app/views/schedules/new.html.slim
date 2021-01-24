@@ -16,10 +16,10 @@
         = f.text_field :name, class: 'form-control', id: 'schedule_name'
     .form-group
         = f.label :いつから
-        = f.text_field :startdate, class: 'form-control'
+        = f.date_select :startdate, class: 'form-control'
     .form-group
         = f.label :いつまで
-        = f.text_field :enddate, class: 'form-control'
+        = f.date_select :enddate, class: 'form-control'
  
     .form-group
         = f.label :メモ
