@@ -1,0 +1,109 @@
+.midasi{
+  font-size: 35px;
+  text-align: center;
+}
+
+html, body {
+font-family: "PixelMplus12-Regular";//フォント指定
+}
+
+header {
+  font-size: 50px;//日付文字サイズ
+  text-align: center;
+}
+main{
+  font-size: 45px;
+  text-align: center;
+}
+body {
+padding: 30px;
+background-image: url("haikei.png");//背景画像
+background-size: cover;//背景画像の大きさを画面にあわせている
+text-align: center;
+}
+
+/* セーブ、ボタン機能 */
+*,
+*:before,
+*:after {//これはわからん
+-webkit-box-sizing: inherit;
+box-sizing: inherit;
+}
+.btn,
+a.btn,
+button.btn {//ボタンの大きさ位置など
+font-size: 1.6rem;
+font-weight: 700;
+line-height: 1.5;
+position: relative;
+display: inline-block;//横並び
+padding: 1rem 4rem;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-transition: all 0.3s;
+transition: all 0.3s;
+text-align: center;
+vertical-align: middle;
+text-decoration: none;
+letter-spacing: 0.1em;
+color: #212529;//外枠の色
+border-radius: 0.5rem;
+}
+
+a.btn-svg {//ボタンの背景
+font-weight: 700;
+line-height: 54px;
+width: 160px;
+height: 54px;
+padding: 0;
+margin: 1em;
+margin-top: 5em;
+cursor: pointer;
+text-decoration: none;
+background-color:rgba(255,255,255,0.3);//枠中の背景色
+}
+
+a.btn-svg svg {//これは一体、、
+position: absolute;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+a.btn-svg svg rect {//枠線かなぁ
+-webkit-transition: all 400ms ease;
+transition: all 400ms ease;
+stroke: #000;
+stroke-width: 4px;
+stroke-dasharray: 200px, 16px;
+stroke-dashoffset: 70px;
+}
+
+a.btn-svg:hover svg rect {//これはしらん
+stroke-dashoffset: 284px;
+}
+
+a.btn-svg span {//文字色
+color: #000;
+}
+input[type="submit"] {
+  background-color:rgba(255,255,255,0.0);//submitのボタンを透明
+  border-style:none;
+  font-size: large;
+}
+/* ↑ここまで選択機能 */
+.kakomi-box2{//テキスト入力枠
+  display: flex;
+  position: relative;//移動するとき元の場所に戻る
+  margin: 1em auto;//箱の周りに出る空白
+  padding: 10px;//箱の中の空白
+  width: 50%;//箱の幅
+  height: 6em;//箱の高さ
+  color: #555555;/* / 文字色 / */
+  background-color:rgba(255,255,255,0.5);
+  border: 4px double #0c0b0b; /* / 枠線の太さ・色 / */
+  box-shadow: 2px 2px 2px #ccc;/* / 影の色 / */
+ }

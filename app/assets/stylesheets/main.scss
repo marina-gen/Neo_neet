@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "PixelMplus12-Regular";
+  src: font-url('/assets/PixelMplus12-Regular.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-image: image-url('haikei.png');
+  background-size: cover; 
+  font-family:"PixelMplus12-Regular";                          
+}
+
+.title {
+    text-align:center;
+    font-size: 80px;
+    font-weight: 900;
+    margin-bottom: 50px;
+  }
+  
+  .kakomi-box{
+    /* display: inline-block;
+    justify-content: center;  */
+    position: relative;
+    margin: 2em auto;
+    padding: 1.2em;
+    width: 90%;
+    color: #555555; /* 文字色 */
+    background-color: rgba($color: #fff, $alpha: 0.8);
+    border: 4px double#0c0b0b; /* 枠線の太さ・色 */
+    box-shadow: 2px 2px 2px #ccc;/* 影の色 */
+    
+   }
+  
+  
+  .kakomi-box1{
+    /* display: inline-block; 
+    justify-content: center; */
+    position: relative;
+    margin: 2em auto;
+    padding: 1.2em;
+    width: 90%;
+    color: #555555; /* 文字色 */
+    background-color: rgba($color: #fff, $alpha: 0.8);
+    border: 4px double #0c0b0b; /* 枠線の太さ・色 */
+    box-shadow: 2px 2px 2px #ccc;/* 影の色 */
+    
+   }
+  
+   .title-box{
+    position: absolute;
+    padding: 0 .5em;
+    margin-bottom: 10px;
+    left: 20px;
+    top: -15px;
+    font-weight: bold;
+    font-size: 30px;
+    background-color:#fff; /* タイトル背景色 */
+    color: #0c0b0b; /* タイトル文字色 */
+    
+   }
+  
+   .wrapper {
+    margin: 15px auto;
+    max-width: 700px;
+  }
+  .container-calendar {
+    background-color: rgba($color: #fff, $alpha: 0.8);
+    padding: 15px;
+    width: 85%;
+    margin: 0 auto;
+    overflow: auto;
+  }
+  
+  .container-calendar {
+    .day {
+      font-size: 20px;
+    }  
+    .prev-month {
+      font-size: 25px;
+    }
+    .next-month { 
+      font-size: 25px;
+    }
+    .current-month {
+      font-size: 25px;
+    }
+  }
+
+.calendar-heading { 
+  font-size: 45px;
+}
+
+tr {
+  font-size: 30px;
+}
+
+.menu p{
+  font-size: 35px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.top{
+  margin-top: 20px;
+}
+
+.yotei{
+  font-size: 50px;
+}

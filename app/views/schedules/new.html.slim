@@ -1,0 +1,29 @@
+/<h1>スケジュール</h1>
+
+.nav.justify-content-end
+    a.btn.btn-svg href='http://localhost:3000/schedules'
+        svg
+          rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
+        span  予定一覧
+    a.btn.btn-svg href='http://localhost:3000/calendars'
+        svg
+          rect fill="none" height="50" rx="0" width="150" x="2" y="2" 
+        span  たびのはじまりへ
+
+= form_with model: @schedule, local: true do |f|
+    .form-group
+        = f.label :予定を追加
+        = f.text_field :name, class: 'form-control', id: 'schedule_name'
+    .form-group
+        = f.label :いつから
+        = f.date_select :startdate, class: 'form-control'
+    .form-group
+        = f.label :いつまで
+        = f.date_select :enddate, class: 'form-control'
+ 
+    .form-group
+        = f.label :メモ
+        = f.text_field :memo, class: 'form-control'
+ 
+
+    = f.submit '投稿', class: 'btn btn-primary'

@@ -1,0 +1,30 @@
+doctype html
+html
+| create
+  head
+    meta[charset="utf-8"]
+    title
+      |  クエスト追加
+    =stylesheet_link_tag "schedules" media => "all"
+  body
+    header.midasi
+      span#view_today
+      script[type="text/javascript"]
+        |  document.getElementById("view_today").innerHTML = getToday(); function getToday() { var now = new Date(); var year = now.getFullYear(); var mon = now.getMonth()+1; //１を足すこと var day = now.getDate(); var you = now.getDay(); //曜日(0～6=日～土) //曜日の選択肢 var youbi = new Array("日","月","火","水","木","金","土"); //出力用 var s = year + "年" + mon + "月" + day + "日 (" + youbi[you] + ")"; return s; } 
+    main.main
+      form[action="#" method="post"]
+        input.kakomi-box1[type="kakomi-box1" placeholder="予定を追加"]
+        input.kakomi-box1[type="kakomi-box1" placeholder="時間を追加"]
+        f= textarea.kakomi-box1[type="search" name="q" placeholder="メモは100字以内"]
+  footer
+    .footerInner
+      a.btn.btn-svg[href=""]
+        svg
+          rect[x="1.5" y="1.5" rx="0" fill="none" width="150" height="50"]
+        span.kinou
+          | セーブ
+      a.btn.btn-svg[href=""]
+        svg
+          rect[x="2" y="2" rx="0" fill="none" width="150" height="50"]
+        span
+          | 戻る
